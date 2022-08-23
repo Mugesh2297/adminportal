@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
-function User() {
+function Products() {
  const [users,setUsers] = useState([]);
  const[isLoading,setLoading]=useState(false);
 useEffect(()=>{
@@ -48,7 +48,7 @@ let deleteProduct = async (id) =>{
                                 <tr>
                                     <th>S.NO</th>
                                     <th>Name</th>
-                                    <th>Year</th>
+                                    <th>Month of Manufacture</th>
                                     <th>Price</th>
                                     <th>Action</th>
                                     
@@ -83,4 +83,4 @@ let deleteProduct = async (id) =>{
     )
 }
 
-export default User;
+export default Products;
