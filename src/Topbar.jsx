@@ -193,7 +193,7 @@ function Topbar() {
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span className="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                 <img className="img-profile rounded-circle"
-                    src="img/undraw_profile.svg"/>
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAZyFdywMPXJlTpPImDs4x5RkRvjCqAk6tsA&usqp=CAU"/>
             </a>
             {/* <!-- Dropdown - User Information --> */}
             <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in"

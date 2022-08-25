@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit,faEye,faTrash } from "@fortawesome/free-solid-svg-icons";
 
 function User() {
  const [users,setUsers] = useState([]);
@@ -11,6 +13,7 @@ loadData()
 let loadData = async ()=>{
     setLoading(true)
 let users = await axios.get("https://62e12867fa8ed271c4908043.mockapi.io/users");
+console.log(users)
 setUsers(users.data)
 setLoading(false)
 }
@@ -19,14 +22,16 @@ let deleteUser = async (id) =>{
         let ask = window.confirm("Are You Sure Want to Delete This Data");
         if(ask){
         await axios.delete(`https://62e12867fa8ed271c4908043.mockapi.io/users/${id}`);
+        
         loadData()
+        alert("User deleted Sucessfully");
     }
     } catch (error) {
         
     }
 }
     return (
-        <div class="container-fluid">
+        <div className="container-fluid">
 
             {/* <!-- Page Heading --> */}
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
@@ -37,13 +42,13 @@ let deleteUser = async (id) =>{
 
             {/* <!-- DataTales Example --> */}
             {
-                isLoading ? <span>Loading...</span> :  <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                isLoading ? <span>Loading...</span> :  <div className="card shadow mb-4">
+                <div className="card-header py-3">
+                    <h6 className="m-0 font-weight-bold text-primary">DataTables Example</h6>
                 </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <div className="card-body">
+                    <div className="table-responsive">
+                        <table className="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>S.NO</th>
@@ -68,9 +73,12 @@ let deleteUser = async (id) =>{
                                         <td>{user.age}</td>
                                         <td>{user.startdate}</td>
                                         <td>${user.salary}</td>
-                                        <td><Link to={`/portal/users/${user.id}`} class="btn btn-sm btn-warning mr-2">View</Link>
-                                        <Link  to={`/portal/user/edit/${user.id}`} class="btn btn-sm btn-primary mr-2">Edit</Link>
-                                        <button onClick={()=>deleteUser(user.id)} class="btn btn-sm btn-danger mr-2">Delete</button>
+                                        <td><Link to={`/portal/users/${user.id}`} className="btn btn-sm btn-warning mr-2">
+                                        <FontAwesomeIcon icon={faEye}></FontAwesomeIcon> View</Link>
+                                        <Link  to={`/portal/user/edit/${user.id}`} className="btn btn-sm btn-primary mr-2">
+                                        <FontAwesomeIcon icon={faEdit}></FontAwesomeIcon> Edit</Link>
+                                        <button onClick={()=>deleteUser(user.id)} className="btn btn-sm btn-danger mr-2">
+                                        <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon> Delete</button>
                                         </td>
 
                                     </tr>

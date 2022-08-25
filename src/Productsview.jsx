@@ -26,8 +26,10 @@ function Productsview() {
 
         <div class="card" style={{width:'18 rem'}}>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><b>Name:</b> {userData.name}</li>
-          <li class="list-group-item"><b>Month:</b> {userData.year}</li>
+          <li class="list-group-item"><b>Product Name:</b> {userData.name}</li>
+          <li class="list-group-item"><b>Color:</b> {userData.color}</li>
+          <li class="list-group-item"><b>Manufacturer: </b>{userData.manufacturer}</li>
+          <li class="list-group-item"><b>Month of Manufacture: </b>{userData.month}</li>
           <li class="list-group-item"><b>Price: </b>{userData.price}</li>
           
         </ul>
