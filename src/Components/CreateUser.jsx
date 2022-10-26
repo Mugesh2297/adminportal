@@ -66,7 +66,7 @@ function CreateUser() {
             <span style={{color:'red'}}>{formik.errors.name}</span>
           </div>
           <div className='col-lg-6  p-2'>
-            <lable>Email</lable>
+            <lable>Email ID</lable>
             <input className='form-control' type={"email"} placeholder="Enter Email"
             value={formik.values.email} onChange={formik.handleChange}
             name="email"></input>
